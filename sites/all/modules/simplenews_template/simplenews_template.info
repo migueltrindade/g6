@@ -1,0 +1,15 @@
+; $Id: simplenews_template.info,v 1.3.2.2 2010/05/10 11:56:47 franz Exp $
+name = "Simplenews Template"
+description = "Extends Simplenews by providing a themable template with configurable header, footer and style."
+dependencies[] = simplenews
+dependencies[] = mimemail
+dependencies[] = token
+package = Mail
+core = 6.x
+
+; Information added by drupal.org packaging script on 2010-05-10
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "simplenews_template"
+datestamp = "1273493668"
+

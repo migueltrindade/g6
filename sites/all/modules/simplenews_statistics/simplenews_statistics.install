@@ -1,0 +1,139 @@
+<?php
+// $Id: simplenews_statistics.install,v 1.6 2009/09/28 13:58:04 docc Exp $
+
+/**
+ * @file
+ * Simplenews Statistics installation.
+ */
+
+/**
+ * Implementation of hook_schema().
+ */
+function simplenews_statistics_schema() {
+  $schema['simplenews_statistics'] = array(
+    'description' => t('Statistics'),
+    'fields' => array(
+      'nid' => array(
+        'description' => t('Node ID.'),
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'send' => array(
+        'description' => t('Send emails'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('nid'),
+  );
+
+  $schema['simplenews_statistics_clicks'] = array(
+    'description' => t('Newsletter Clicks'),
+    'fields' => array(
+       'email' => array(
+        'description' => t('Primary key: Email.'),
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+      ),
+      'nid' => array(
+        'description' => t('Node ID.'),
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'url' => array(
+        'description' => t('The clicked URL.'),
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+      ),
+      'timestamp' => array(
+        'description' => t('The time of the click'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+  );
+
+  $schema['simplenews_statistics_opens'] = array(
+    'description' => t('Newsletter Opens'),
+    'fields' => array(
+      'email' => array(
+        'description' => t('Primary key: Email.'),
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+      ),
+      'nid' => array(
+        'description' => t('Node ID.'),
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'opens' => array(
+        'description' => t('Amount of opens'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'timestamp' => array(
+        'description' => t('Time of view'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+  );
+  return $schema;
+}
+
+/**
+ * Implementation of hook_install().
+ */
+function simplenews_statistics_install() {
+  if (!drupal_install_schema('simplenews_statistics')) {
+    drupal_set_message(t('The installation of Simplenews Statistics was not successful.'), 'error');
+  }
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function simplenews_statistics_uninstall() {
+  drupal_uninstall_schema('simplenews_statistics');
+}
+
+/**
+ * #6001: 6.x-1.1 upgrade.
+ * - Change nid columns to INT
+ */
+function simplenews_statistics_update_6001() {
+  $ret = array();
+  db_change_field($ret, 'simplenews_statistics', 'nid', 'nid', array(
+    'type' => 'int',
+    'not null' => TRUE,
+    'default' => 0,
+    )
+  );
+  db_change_field($ret, 'simplenews_statistics_clicks', 'nid', 'nid', array(
+    'type' => 'int',
+    'not null' => TRUE,
+    'default' => 0,
+    )
+  );
+  db_change_field($ret, 'simplenews_statistics_opens', 'nid', 'nid', array(
+    'type' => 'int',
+    'not null' => TRUE,
+    'default' => 0,
+    )
+  );
+  return $ret;
+}

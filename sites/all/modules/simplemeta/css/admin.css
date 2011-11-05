@@ -1,0 +1,106 @@
+#simplemeta-admin-settings {
+	width: 355px;
+}
+#simplemeta-admin-settings label{
+	font-weight: bold;
+	font-size:12px;
+}
+#simplemeta-admin-settings-right {
+	height: 0px;
+	overflow: hidden;
+}
+#simplemeta-admin-settings-left-search-field {
+	width: 351px;
+}
+#simplemeta-admin-settings-left-search-field.gray{
+	color: #ddd;
+}
+#simplemeta-admin-settings-left-results-up, #simplemeta-admin-settings-left-results-down {
+	background: transparent url(imgs/dash.png) repeat-x 0 50%;
+	height: 14px;
+	cursor: pointer;
+	width: 352px;
+}
+#simplemeta-admin-settings-left-results-up div {
+	height: 18px;
+	background: transparent url(imgs/up.png) no-repeat right 0;
+	position: relative;
+	left: 4px;
+}
+#simplemeta-admin-settings-left-results-down div {
+	height: 18px;
+	background: transparent url(imgs/down.png) no-repeat right 0;
+	position: relative;
+	left: 4px;
+}
+#simplemeta-admin-settings-left-results-container {
+	height: 261px;
+	padding: 5px;
+}
+#simplemeta-admin-settings-left-results-container.loading {
+	background: transparent url(imgs/loading.gif) no-repeat 50% 50%;
+}
+#simplemeta-admin-settings-right-menu-new, #simplemeta-admin-settings-right-menu-save, #simplemeta-admin-settings-right-menu-delete {
+	background: transparent url(imgs/buttons.png) no-repeat 32px -28px;
+	height: 28px;
+	cursor: pointer;	
+	-webkit-user-select: none;
+	float: left;
+	margin-top: 4px;
+}
+#simplemeta-admin-settings-right-form {
+	padding: 5px;
+	margin: 0;
+}
+#simplemeta-admin-settings-right-form .simplemeta-path, #simplemeta-admin-settings-right-form .simplemeta-title, #simplemeta-admin-settings-right-form .simplemeta-keywords, #simplemeta-admin-settings-right-form .simplemeta-description {
+	width: 100%;
+}
+#simplemeta-admin-settings-right-form .simplemeta-description {
+	height: 67px;
+	max-width: 100%;
+	max-height: 67px;
+}
+#simplemeta-admin-settings-right-menu-new {
+	background-position: 0 -28px;
+	width: 53px;
+}
+#simplemeta-admin-settings-right-menu-new.disabled {
+	background-position: 0 0;
+	width: 53px;
+}
+#simplemeta-admin-settings-right-menu-new.pushed {
+	background-position: 0px -56px;
+	width: 53px;
+}
+#simplemeta-admin-settings-right-menu-save {	
+	background-position: -124px -28px;
+	width: 55px;
+}
+#simplemeta-admin-settings-right-menu-save.disabled {	
+	background-position: -124px 0;
+	width: 55px;
+}
+#simplemeta-admin-settings-right-menu-save.pushed {	
+	background-position: -124px -56px;
+	width: 55px;
+}
+#simplemeta-admin-settings-right-menu-delete {
+	background-position: -53px -28px;	
+	width: 71px;
+}
+#simplemeta-admin-settings-right-menu-delete.disabled {
+	background-position: -53px 0;	
+	width: 71px;
+}
+#simplemeta-admin-settings-right-menu-delete.pushed {
+	background-position: -53px -56px;	
+	width: 71px;
+}
+#simplemeta-admin-settings-right-status {
+	float: right;
+	display:none;
+	font-size: 10px;
+	padding: 4px;
+	-webkit-box-shadow: 0 0 3px #333;
+	-moz-box-shadow: 0 0 3px #333;
+}

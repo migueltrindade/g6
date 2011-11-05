@@ -1,0 +1,96 @@
+<?php
+//$Id$
+
+function formalter_init() {
+	jquery_plugin_add('cycle');
+}
+
+/**
+ * Implementation of hook_form_alter
+ */
+function formalter_form_alter(&$form, $form_state, $form_id) {
+	if ($form_id == 'cadastro_node_form') {
+		
+		$breadcrumb[] = l('Inicio', null);
+		$breadcrumb[] .= t('Cadastro');
+		drupal_set_breadcrumb($breadcrumb);
+	
+		drupal_set_title(t('Cadastro'));
+		//dsm($form);
+		unset($form['buttons']['preview']);
+		unset($form['buttons']['submit']['#submit']);
+		$form['buttons']['submit']['#submit'] = array('formalter_form_submit');
+		
+		//dsm($form);
+		
+		
+		/*// Overwrite the default node submission handler with our own.
+		
+		//$form['buttons']['submit']['#submit'][] = array();
+    */
+  }
+	
+	//dsm($form);
+	//dsm($form_state);
+}
+
+/**
+ * Implementation of hook_form_submit
+ */
+function formalter_form_submit($form, &$form_state) {
+  
+	$email_cadastro = $form_state['values']['field_email'][0]['email'];
+	$form_state['redirect'] = 'node/add/cadastro';
+	
+	$result = db_query("SELECT node.nid AS nid,
+   node_data_field_email.field_email_email AS node_data_field_email_field_email_email,
+   node.type AS node_type,
+   node.vid AS node_vid
+ FROM node node 
+ LEFT JOIN content_type_cadastro node_data_field_email ON node.vid = node_data_field_email.vid
+ WHERE (node.type in ('cadastro')) AND ((node_data_field_email.field_email_email) = ('".$email_cadastro."')) LIMIT 0,1");
+
+	$dados = db_fetch_array($result);
+	
+	foreach($form_state['values']['field_newsletter'] as $tid_news) {
+		simplenews_subscribe_user($email_cadastro, $tid_news['value'], FALSE, NULL);
+	}
+	
+	if($dados['node_data_field_email_field_email_email'] == $email_cadastro) {
+	
+		drupal_set_message(t('Esse e-mail j&aacute; encontra-se cadastrado em nossa base de dados. Muito obrigado.'), 'warning');
+	
+	} else {
+		
+		global $user;
+
+		$node = node_form_submit_build_node($form, $form_state);
+		$insert = empty($node->nid);
+		node_save($node);
+		$node_link = l(t('view'), 'node/'. $node->nid);
+		$watchdog_args = array('@type' => $node->type, '%title' => $node->title);
+		$t_args = array('@type' => node_get_types('name', $node), '%title' => $node->title);
+	
+		if ($insert) {
+			watchdog('content', '@type: added %title.', $watchdog_args, WATCHDOG_NOTICE, $node_link);
+			drupal_set_message(t('Cadastro efetuado com sucesso. Muito obrigado.'));
+		}
+		else {
+			watchdog('content', '@type: updated %title.', $watchdog_args, WATCHDOG_NOTICE, $node_link);
+			drupal_set_message(t('@type %title has been updated.', $t_args));
+		}
+		if ($node->nid) {
+			unset($form_state['rebuild']);
+			$form_state['nid'] = $node->nid;
+			//$form_state['redirect'] = 'node/'. $node->nid;
+			//$form_state['redirect'] = 'node/add/cadastro';
+		}
+		else {
+			// In the unlikely case something went wrong on save, the node will be
+			// rebuilt and node form redisplayed the same way as in preview.
+			drupal_set_message(t('Erro ao efetuar cadastro. Por favor tente novamente.'), 'error');
+		}
+		
+	} 
+	
+}

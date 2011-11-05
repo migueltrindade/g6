@@ -1,0 +1,7 @@
+; $Id$
+name = Form Alter
+description = Alterar formularios
+core = 6.x
+package = Form Alter
+
+

@@ -1,0 +1,6 @@
+; $Id$
+name = Mapa de site
+description = Provém um mapa de site baseado no menu principal
+core = 6.x
+
+

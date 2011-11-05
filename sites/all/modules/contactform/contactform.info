@@ -1,0 +1,5 @@
+; $Id$
+name = Contact Form
+package = User interface
+description = Modificando o formulário de contato existente
+core = 6.x

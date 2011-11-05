@@ -1,0 +1,36 @@
+; $Id$
+
+name = Framework
+description = Framework is a blank canvas for theme developers. Use Framework as a starting point to help facilitate your theme development.
+version = VERSION
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = style.css
+stylesheets[print][] = print.css
+scripts[] = main.js
+
+regions[left] = Lateral esquerda
+regions[right] = Lateral direita
+regions[content] = Conteudo
+regions[menu_principal] = Menu principal
+regions[menu_usuario] = Menu Usuario
+regions[header] = Cabecalho
+regions[footer] = Rodape
+
+regions[direita] = Home Direita
+regions[missao] = Home Missao
+regions[a_home] = Home Bloco A
+regions[b_home] = Home Bloco B
+regions[c_home] = Home Bloco C
+
+regions[a_int] = Interno Bloco A
+regions[b_int] = Interno Bloco B
+regions[c_int] = Interno Bloco C
+regions[d_int] = Interno Bloco D
+regions[e_int] = Interno Bloco E
+
+regions[md_treinamentos] = Destaque Menu Treinamentos
+regions[md_profissional] = Destaque Menu Profissional
+regions[md_esportiva] = Destaque Menu Esportiva
+regions[md_eventos] = Destaque Menu Eventos
+

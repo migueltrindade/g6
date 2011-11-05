@@ -1,0 +1,80 @@
+# Danish translation of Drupal (modules/user_force_term/user_force_term.module)
+# Copyright 2007 Morten Wulff <wulff@ratatosk.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: Danish translation of Drupal (modules/user_force_term/user_force_term.module) $Id: da.po,v 1.2 2008/11/27 12:17:32 wulff Exp $\n"
+"POT-Creation-Date: 2008-11-27 13:10+0100\n"
+"PO-Revision-Date: 2008-11-27 13:13+0100\n"
+"Last-Translator: Morten Wulff <wulff@atatosk.net>\n"
+"Language-Team: Danish <l10n@drupaldanmark.dk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Danish\n"
+"X-Poedit-Country: DENMARK\n"
+
+#: user_force_term.module:34
+msgid "Depending on your settings for the <a href=\"!url\">user force term module</a>, this dropdown may not be visible to all users."
+msgstr "Afhængig af dine indstillinger af <a href=\"!url\">user force term-modulet</a> kan denne rulleliste være skjult for visse brugere."
+
+#: user_force_term.module:77
+msgid "Force content submitted by users to be associated with a taxonomy term."
+msgstr "Gennemtving tilknytning af en bestemt term til indhold indsendt brugere med en bestemt rolle."
+
+#: user_force_term.module:79
+msgid "By selecting a vocabulary from the list below, you can force all content created by specific users to be associated with a term from that vocabulary. When you have selected a vocabulary, you can edit a user to select the forced term you wish to associate with all his or her content."
+msgstr "Vælge et ordforråd fra listen herunder for at gennemtvinge at alt indhold indsendt af bestemte brugere altid knyttes til en bestemt term. Når du har valgt et ordforråd kan du redigere en bruger og vælge hvilken term, der skal knyttes til hans eller hendes indhold."
+
+#: user_force_term.module:142
+msgid "You need to create at least one taxonomy to use this feature."
+msgstr "Du skal oprette mindst én taksonomi for at bruge denne funktionalitet."
+
+#: user_force_term.module:145;175
+msgid "<none>"
+msgstr "<ingen>"
+
+#: user_force_term.module:152;90
+msgid "Force taxonomy term"
+msgstr "Tvungen tilknytning af term"
+
+#: user_force_term.module:155;91
+msgid "Force all content submitted by users to be attached to a term from this vocabulary."
+msgstr "Gennemtving at alt indhold indsendt af brugerne tilknyttes et ord fra dette ordforråd."
+
+#: user_force_term.module:187
+msgid "Forced term association"
+msgstr "Tvungen tilknytning af term"
+
+#: user_force_term.module:190
+msgid "Force all content submitted by this user to be associated with the selected term."
+msgstr "Gennemtving at alt indhold indsendt af denne bruger knyttes til det valgte ord."
+
+#: user_force_term.module:105
+msgid "administer forced term associations"
+msgstr "administrer tvungen tilknytning af termer"
+
+#: user_force_term.module:0
+msgid "user_force_term"
+msgstr "user_force_term"
+
+#: user_force_term.install:16
+msgid "The base table for user force term."
+msgstr "Den grundlæggende tabel for User force term."
+
+#: user_force_term.install:19
+msgid "User ID"
+msgstr "Bruger ID"
+
+#: user_force_term.install:26
+msgid "The term ID connected to all content created by the user."
+msgstr "Term ID som knyttes til alt indhold oprettet af brugeren."
+
+#: user_force_term.info:0
+msgid "User Force Term"
+msgstr "Gennemtving tilknytning af term"
+
+#: user_force_term.info:0
+msgid "Force all content created by a user to be connected to a taxonomy term."
+msgstr "Gennemtving tilknytning af en bestemt term til indhold indsendt af bestemte brugere."
+

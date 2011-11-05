@@ -1,0 +1,112 @@
+# Portuguese, Brazil translation of Simplenews (all releases)
+# Copyright (c) 2010 by the Portuguese, Brazil translation team
+# Generated from files:
+#  simplenews_action.module,v 1.1.2.6 2009/01/21 08:21:08 sutharsan
+#  simplenews_action.module,v 1.1.2.8 2010/01/03 14:30:56 sutharsan
+#  simplenews_action.info,v 1.1.2.3 2008/07/15 10:05:08 sutharsan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Simplenews (all releases)\n"
+"POT-Creation-Date: 2010-06-01 23:47+0000\n"
+"PO-Revision-Date: 2009-11-25 22:59+0000\n"
+"Language-Team: Portuguese, Brazil\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: simplenews_action/simplenews_action.module:86,171,192,258,86,171,192,258,86,171,192,258,86,171,192,258,86,171,192,258
+msgid "action"
+msgstr "ação"
+
+#: simplenews_action/simplenews_action.module:17,17,17,17,17
+msgid "Send single simplenews newsletter"
+msgstr ""
+
+#: simplenews_action/simplenews_action.module:27,27,27,27,27
+msgid "Send pending simplenews newsletters"
+msgstr "Enviar newsletters pendentes"
+
+#: simplenews_action/simplenews_action.module:36,36,36,36,36
+msgid "Subscribe the user to a newsletter"
+msgstr "Inscrever um usuário a uma newsletter"
+
+#: simplenews_action/simplenews_action.module:44,44,44,44,44
+msgid "Unsubscribe the user from a newsletter"
+msgstr "Desinscrever um usuário de uma newsletter"
+
+#: simplenews_action/simplenews_action.module:129,129,129,129,129
+msgid "The newsletter issue to send"
+msgstr ""
+
+#: simplenews_action/simplenews_action.module:132,132,132,132,132
+msgid "Allow to resend newsletter"
+msgstr ""
+
+#: simplenews_action/simplenews_action.module:135,135
+msgid ""
+"When checked a newsletter will be send even when already send before. "
+"The newsletter send status is checked, not the status of individual "
+"email addresses. Use this for repeated (e.g. monthly) newsletters."
+msgstr ""
+
+#: simplenews_action/simplenews_action.module:148,148,148,148,148
+msgid "Please select a newsletter issue."
+msgstr "Por favor selecione uma edição da newsletter."
+
+#: simplenews_action/simplenews_action.module:191,191,191,191,191
+msgid "You have been subscribed to newsletter %newsletter."
+msgstr "Você agora é um assinante da newsletter %newsletter."
+
+#: simplenews_action/simplenews_action.module:214,214,214,214,214
+msgid "The newsletter series the user will be subscribed to."
+msgstr ""
+
+#: simplenews_action/simplenews_action.module:257,257,257,257,257
+msgid "You have been removed from the %newsletter subscription list."
+msgstr "Você foi removido da lista de assinantes da newsletter %newsletter."
+
+#: simplenews_action/simplenews_action.module:280,280,280,280,280
+msgid "The newsletter series the user will be unsubscribed from."
+msgstr ""
+
+#: simplenews_action/simplenews_action.module:306,306,306,306,306
+msgid "After a user has been subscribed"
+msgstr "Depois de um usuário ter sido inscrito"
+
+#: simplenews_action/simplenews_action.module:309,309,309,309,309
+msgid "After a user has been unsubscribed"
+msgstr "Depois de um usuário ser desinscrito"
+
+#: simplenews_action/simplenews_action.module:86,86,86,86,86
+msgid "Simplenews newsletter %title send."
+msgstr "A newsletter %title foi enviada."
+
+#: simplenews_action/simplenews_action.module:171,171,171,171,171
+msgid "Simplenews cron executed."
+msgstr "O cron do Simplenews foi executado."
+
+#: simplenews_action/simplenews_action.module:192,192,192,192,192
+msgid "User %name subscribed to newsletter %newsletter."
+msgstr ""
+
+#: simplenews_action/simplenews_action.module:258,258,258,258,258
+msgid "User %name unsubscribed from newsletter %newsletter."
+msgstr ""
+
+#: simplenews_action/simplenews_action.info:0,0,0,0,0
+msgid "Simplenews action"
+msgstr "Simplenews action"
+
+#: simplenews_action/simplenews_action.info:0,0,0,0,0
+msgid "Provide actions for Simplenews."
+msgstr "Cria ações para o Simplenews"
+
+#: simplenews_action/simplenews_action.module:135,135,135
+msgid ""
+"When checked a newsletter will be send even when already sent before. "
+"The newsletter sent status is checked, not the status of individual "
+"email addresses. Use this for repeated (e.g. monthly) newsletters."
+msgstr ""
+

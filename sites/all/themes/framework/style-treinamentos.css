@@ -1,0 +1,97 @@
+.barra-nome-divisao {
+	background: url(images/bg-treinamentos.jpg) repeat-x;
+}
+
+#block-menu-menu-treinamentos ul.menu {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#block-menu-menu-treinamentos ul.menu li {
+	font-size:12px;
+	margin-bottom:1px;
+	margin:0 0 2px 0;
+	padding:0;
+	border:1px;
+}
+#block-menu-menu-treinamentos ul.menu li a {
+	display:block;
+	padding:7px 0 7px 10px;
+	border-left:5px solid #a91a11;
+	background-color:#f7f7f7;
+	width:185px;
+}
+#block-menu-menu-treinamentos ul.menu li a:hover, 
+#block-menu-menu-treinamentos ul.menu li a.active,
+#block-menu-menu-treinamentos ul.menu li.active-trail a{
+	background-color:#a91a11;
+	color:#FFF;
+}
+
+#block-menu-menu-treinamentos ul.menu li.collapsed a {
+	background-image:url(images/icons/plus.png);
+}
+#block-menu-menu-treinamentos ul.menu li.collapsed a:hover, 
+#block-menu-menu-treinamentos ul.menu li.collapsed a.active,
+#block-menu-menu-treinamentos ul.menu li.collapsed.active-trail a{
+	background-image:url(images/icons/plus-hover.png);
+	color:#FFF;
+}
+
+#block-menu-menu-treinamentos ul.menu li.expanded a{
+	background-color:#a91a11;
+	background-image:url(images/icons/minus-hover.png);
+	color:#FFF;
+}
+#block-menu-menu-treinamentos ul.menu li.expanded a:hover,
+#block-menu-menu-treinamentos ul.menu li.expanded a.active{
+	background-color:#a91a11;
+	background-image:url(images/icons/minus-hover.png);
+	color:#FFF;
+}
+
+
+#block-menu-menu-treinamentos ul.menu li ul.menu {
+	padding:10px 5px;
+	background:#FFF;
+}
+#block-menu-menu-treinamentos ul.menu li ul.menu li {
+	background-image:none;
+	background:#fff;
+	font-size:12px;
+	margin-bottom:1px;
+	margin:0 0 2px 0;
+	padding:0;
+}
+#block-menu-menu-treinamentos ul.menu li ul.menu li a {
+	background-color:#fff;
+	background-position:5px center;
+	background-repeat:no-repeat;
+	background-image:url(images/setinha-menu-interna.gif);
+	padding:0 0 0 15px;
+	color:#333;
+	border:0;
+}
+#block-menu-menu-treinamentos ul.menu li ul.menu li a:hover, 
+#block-menu-menu-treinamentos ul.menu li ul.menu li a.active {
+	background-color:#f6f6f6;
+	background-image:url(images/setinha-menu-interna.gif);
+	color:#333;
+}
+
+
+
+.field-field-foto .field-item img:hover {
+	border-color:#a91a11;
+}
+
+
+
+#main-front-page.treinamentos h3{
+	color:#a91a11;
+}
+
+/**
+ * Block Video
+ */
+#block-views-calendario-block_2 h3{background:url(images/bg-treinamentos.jpg) center bottom repeat-x; color:#FFF !important; }

@@ -1,0 +1,13 @@
+; $Id;
+name = FileField Nginx Progress
+description = Adds upload progress functionality for Nginx webservers
+dependencies[] = filefield
+package = CCK
+core = 6.x
+
+; Information added by drupal.org packaging script on 2010-12-16
+version = "6.x-1.4"
+core = "6.x"
+project = "filefield_nginx_progress"
+datestamp = "1292493337"
+

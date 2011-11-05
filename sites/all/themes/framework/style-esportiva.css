@@ -1,0 +1,96 @@
+.barra-nome-divisao {
+	background: url(images/bg-esportiva.jpg) repeat-x;
+}
+
+
+#block-menu-menu-esportiva ul.menu {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#block-menu-menu-esportiva ul.menu li {
+	font-size:12px;
+	margin-bottom:1px;
+	margin:0 0 2px 0;
+	padding:0;
+	border:1px;
+}
+
+#block-menu-menu-esportiva ul.menu li a {
+	display:block;
+	padding:7px 0 7px 10px;
+	border-left:5px solid #03969e;
+	background-color:#f7f7f7;
+	width:185px;
+}
+#block-menu-menu-esportiva ul.menu li a:hover, 
+#block-menu-menu-esportiva ul.menu li a.active,
+#block-menu-menu-esportiva ul.menu li.active-trail a{
+	background-color:#03969e;
+	color:#FFF;
+}
+
+#block-menu-menu-esportiva ul.menu li.collapsed a {
+	background-image:url(images/icons/plus.png);
+}
+#block-menu-menu-esportiva ul.menu li.collapsed a:hover, 
+#block-menu-menu-esportiva ul.menu li.collapsed a.active,
+#block-menu-menu-esportiva ul.menu li.collapsed.active-trail a{
+	background-image:url(images/icons/plus-hover.png);
+	color:#FFF;
+}
+
+#block-menu-menu-esportiva ul.menu li.expanded a{
+	background-color:#03969e;
+	background-image:url(images/icons/minus-hover.png);
+	color:#FFF;
+}
+#block-menu-menu-esportiva ul.menu li.expanded a:hover,
+#block-menu-menu-esportiva ul.menu li.expanded a.active{
+	background-color:#03969e;
+	background-image:url(images/icons/minus-hover.png);
+	color:#FFF;
+}
+
+
+#block-menu-menu-esportiva ul.menu li ul.menu {
+	padding:10px 5px;
+	background:#FFF;
+}
+#block-menu-menu-esportiva ul.menu li ul.menu li {
+	background-image:none;
+	background:#fff;
+	font-size:12px;
+	margin-bottom:1px;
+	margin:0 0 2px 0;
+	padding:0;
+}
+#block-menu-menu-esportiva ul.menu li ul.menu li a {
+	background-color:#fff;
+	background-position:5px center;
+	background-repeat:no-repeat;
+	background-image:url(images/setinha-menu-interna.gif);
+	padding:0 0 0 15px;
+	color:#333;
+	border:0;
+}
+#block-menu-menu-esportiva ul.menu li ul.menu li a:hover, 
+#block-menu-menu-esportiva ul.menu li ul.menu li a.active {
+	background-color:#f6f6f6;
+	background-image:url(images/setinha-menu-interna.gif);
+	color:#333;
+}
+
+
+.field-field-foto .field-item img:hover {
+	border-color:#03969e;
+}
+
+#main-front-page.esportiva h3{
+	color:#03969e;
+}
+
+/**
+ * Block Video
+ */
+#block-views-calendario-block_4 h3{background:#03969e url(images/bg-esportiva.jpg) center bottom repeat-x; color:#FFF !important; } 

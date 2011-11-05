@@ -1,0 +1,98 @@
+.barra-nome-divisao {
+	background: url(images/bg-projetos.jpg) repeat-x;
+}
+
+
+#block-menu-menu-projetos ul.menu {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#block-menu-menu-projetos ul.menu li {
+	font-size:12px;
+	margin-bottom:1px;
+	margin:0 0 2px 0;
+	padding:0;
+	border:1px;
+}
+#block-menu-menu-projetos ul.menu li a {
+	display:block;
+	padding:7px 0 7px 10px;
+	border-left:5px solid #c79b04;
+	background-color:#f7f7f7;
+	width:185px;
+}
+#block-menu-menu-projetos ul.menu li a:hover, 
+#block-menu-menu-projetos ul.menu li a.active,
+#block-menu-menu-projetos ul.menu li.active-trail a{
+	background-color:#c79b04;
+	color:#FFF;
+}
+
+#block-menu-menu-projetos ul.menu li.collapsed a {
+	background-image:url(images/icons/plus.png);
+}
+#block-menu-menu-projetos ul.menu li.collapsed a:hover, 
+#block-menu-menu-projetos ul.menu li.collapsed a.active,
+#block-menu-menu-projetos ul.menu li.collapsed.active-trail a{
+	background-image:url(images/icons/plus-hover.png);
+	color:#FFF;
+}
+
+#block-menu-menu-projetos ul.menu li.expanded a{
+	background-color:#c79b04;
+	background-image:url(images/icons/minus-hover.png);
+	color:#FFF;
+}
+#block-menu-menu-projetos ul.menu li.expanded a:hover,
+#block-menu-menu-projetos ul.menu li.expanded a.active{
+	background-color:#c79b04;
+	background-image:url(images/icons/minus-hover.png);
+	color:#FFF;
+}
+
+
+#block-menu-menu-projetos ul.menu li ul.menu {
+	padding:10px 5px;
+	background:#FFF;
+}
+#block-menu-menu-projetos ul.menu li ul.menu li {
+	background-image:none;
+	background:#fff;
+	font-size:12px;
+	margin-bottom:1px;
+	margin:0 0 2px 0;
+	padding:0;
+}
+#block-menu-menu-projetos ul.menu li ul.menu li a {
+	background-color:#fff;
+	background-position:5px center;
+	background-repeat:no-repeat;
+	background-image:url(images/setinha-menu-interna.gif);
+	padding:0 0 0 15px;
+	color:#333;
+	border:0;
+}
+#block-menu-menu-projetos ul.menu li ul.menu li a:hover, 
+#block-menu-menu-projetos ul.menu li ul.menu li a.active {
+	background-color:#f6f6f6;
+	background-image:url(images/setinha-menu-interna.gif);
+	color:#333;
+}
+
+
+
+
+
+.field-field-foto .field-item img:hover {
+	border-color:#c79b04;
+}
+
+#main-front-page.eventos h3{
+	color:#c79b04;
+}
+
+/**
+ * Block Video
+ */
+#block-views-calendario-block_5 h3{ background:#c79b04 url(images/bg-projetos.jpg) center bottom repeat-x; color:#FFF !important; }

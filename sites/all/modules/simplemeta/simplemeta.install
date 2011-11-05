@@ -1,0 +1,41 @@
+<?php
+// $Id: simplemeta.install,v 1.2 2010/06/04 01:35:21 adciservercom Exp $
+
+function simplemeta_install() {
+  drupal_install_schema('simplemeta');
+}
+
+function simplemeta_schema() {
+  return array('simplemeta_data' => 
+    array(
+      'fields' => array(
+        'sid' => array(
+          'type' => 'serial',
+          'not null' => TRUE,
+        ),
+        'path' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'description' => array(
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'keywords' => array(
+          'type' => 'text',
+          'not null' => TRUE,
+        )
+      ),
+      'primary key' => array('sid')
+    )
+  );
+}
+
+function simplemeta_uninstall() {
+  drupal_uninstall_schema('simplemeta');
+}

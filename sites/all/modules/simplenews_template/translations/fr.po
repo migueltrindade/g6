@@ -1,0 +1,100 @@
+# $Id: fr.po,v 1.1.2.2 2008/12/02 12:40:47 tobiassjosten Exp $
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  simplenews_template.module,v 1.2 2007/04/09 21:52:23 tbarregren
+#  simplenews_template.install,v 1.1 2007/03/22 20:27:54 tbarregren
+#  simplenews_template.info,v 1.1 2007/03/22 20:27:54 tbarregren
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2008-10-06 20:36+0200\n"
+"PO-Revision-Date: 2008-10-06 20:36+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: simplenews_template.module:229;241
+msgid "Header"
+msgstr "Titre"
+
+#: simplenews_template.module:230
+msgid "Enter a header common for all issues of this newsletter. For more information, see the !help."
+msgstr ""
+"Entrez une entête commune pour toutes les newsletters. Pour plus "
+"d'information, voir l'!help."
+
+#: simplenews_template.module:232;259;286
+msgid "help page"
+msgstr "page d'aide"
+
+#: simplenews_template.module:242
+msgid "Enter the content of the newsletter's header."
+msgstr "Entrez le contenu de l'entête de la newsletter."
+
+#: simplenews_template.module:256;268
+msgid "Footer"
+msgstr "Pied de page"
+
+#: simplenews_template.module:257
+msgid "Enter a footer common for all issues of this newsletter. For more information, see the !help."
+msgstr ""
+"Entrez un pied de page commun pour toutes les newsletter. Pour plus "
+"d'information, voir l'!help."
+
+#: simplenews_template.module:269
+msgid "Enter the content of the newsletter's footer."
+msgstr "Entrez le contenu du pied de page de la newsletter."
+
+#: simplenews_template.module:283
+msgid "Style"
+msgstr "Style"
+
+#: simplenews_template.module:284
+msgid "For more information, see the !help."
+msgstr "Pour plus d'information, voir l'!help."
+
+#: simplenews_template.module:295
+msgid "Body background color"
+msgstr "Couleur de fond du <body>"
+
+#: simplenews_template.module:296
+msgid "Enter the body background color to be used in all issues of this newsletter."
+msgstr ""
+"Entrez la couleur de fond qui doit être utilisée pour les éditions "
+"de cette newsletter."
+
+#: simplenews_template.module:303
+msgid "CSS"
+msgstr "CSS"
+
+#: simplenews_template.module:304
+msgid "Enter the CSS code to be included in all issues of this newsletter."
+msgstr ""
+"Entrez le code CSS qui doit être inclus dans toutes les éditions de "
+"cette newsletter."
+
+#: simplenews_template.install:25
+msgid "!module was succefully installed."
+msgstr "!module a été installé avec succès."
+
+#: simplenews_template.install:37
+msgid "Failed to delete variables for Simplenews Template."
+msgstr "Echec lors de la suppresion des variables de Simplenews Template."
+
+#: simplenews_template.info:0
+msgid "Simplenews Template"
+msgstr "Simplenews Template"
+
+#: simplenews_template.info:0
+msgid "Extends Simplenews by providing a themable template with configurable header, footer and style."
+msgstr ""
+"Étend Simplenews en fournissant un template \"thémable\" avec "
+"entête, pied de page et styles configurables."
+

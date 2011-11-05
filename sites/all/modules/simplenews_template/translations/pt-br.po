@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2008-10-19 22:46+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Franz Glauber Vanderlinde <franz@chuva-inc.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: simplenews_template.module:203
+msgid "Simplenews Template preview"
+msgstr "Pré-visualização do Simplenew Template"
+
+#: simplenews_template.module:242
+msgid "Preview"
+msgstr "Pré-visualização"
+
+#: simplenews_template.module:298;307
+msgid "Header"
+msgstr "Cabeçalho"
+
+#: simplenews_template.module:299
+msgid "The header common for all issues of this newsletter."
+msgstr "O cabeçalho comum a todas as edições dessa newsletter"
+
+#: simplenews_template.module:308
+msgid "Enter the content of the newsletter's header."
+msgstr "Insira o conteúdo do cabeçalho da newsletter"
+
+#: simplenews_template.module:322;331
+msgid "Footer"
+msgstr "Rodapé"
+
+#: simplenews_template.module:323
+msgid "The footer common for all issues of this newsletter."
+msgstr "O rodapé comum a todas as edições dessa newsletter"
+
+#: simplenews_template.module:332
+msgid "Enter the content of the newsletter's footer."
+msgstr "Insira o conteúdo do rodapé da newsletter"
+
+#: simplenews_template.module:346
+msgid "Style"
+msgstr "Estilo"
+
+#: simplenews_template.module:347
+msgid "The style to be applied to all issues of this newsletter"
+msgstr "O estilo a ser aplicado à todas as edições dessa newsletter."
+
+#: simplenews_template.module:355
+msgid "Body background color"
+msgstr "Cor de fundo do corpo"
+
+#: simplenews_template.module:356
+msgid "Enter the backgound color of the body."
+msgstr "Insira a cor de fundo do corpo"
+
+#: simplenews_template.module:363
+msgid "CSS"
+msgstr "CSS"
+
+#: simplenews_template.module:364
+msgid "Enter the CSS rules of the body."
+msgstr "Insira as regras de CSS do corpo"
+
+#: simplenews_template.module:192
+msgid "access newsletter preview"
+msgstr "access newsletter preview"
+
+#: simplenews_template.module:0
+msgid "simplenews_template"
+msgstr "simplenews_template"
+
+#: simplenews_template.info:0
+msgid "Simplenews Template"
+msgstr "Simplenews Template"
+
+#: simplenews_template.info:0
+msgid "Extends Simplenews by providing a themable template with configurable header, footer and style."
+msgstr "Extende o módulo Simplenews provendo um template customizável com cabeçalho, rodapé e estilo."
+
+#: simplenews_template.info:0
+msgid "Mail"
+msgstr "Mail"
+

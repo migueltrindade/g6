@@ -1,0 +1,67 @@
+<?php
+function contactform_form_alter(&$form, $form_state, $form_id) {
+  
+	// check for contact form
+  if ($form_id == 'contact_mail_page') {
+       
+    // prefix another submit handler
+    array_unshift($form['#submit'], '_contactform_mail_page_submit');
+       
+    // NOTE: since I want to insert the form element at a certain point,
+    // I have to create a new $form object
+    $newForm = array();
+       
+    // define insertion point
+    $ip = 'message';
+       
+    // lop through $form object and duplicate the values
+    foreach ($form as $k => $v) {
+           
+      if ($k == $ip) {
+       
+			 $newForm['fone'] = array(
+					'#type' => 'textfield',
+					'#required' => true,
+					'#title' => 'Telefone',
+				);
+				
+				$newForm['empresa'] = array(
+					'#type' => 'textfield',
+					'#title' => 'Empresa',
+				);
+      }    
+      $newForm[$k] = $v;
+    }
+    // replace $form object with new form
+    $form = $newForm;
+
+  }
+}
+
+function _contactform_mail_page_submit($form, &$form_state) { 
+	
+	/*$msg = str_replace("\n","<br />",$form_state['values']['message']);
+	
+	$msg_nova = "
+	<br /><br /><b>Nome:</b> " . $form_state['values']['name']."
+	<br /><b>E-mail:</b> " . $form_state['values']['mail']."
+	<br /><b>Telefone:</b> " . $form_state['values']['fone']."
+	<br /><b>Empresa:</b> " . $form_state['values']['empresa']."
+	<br /><br /><b>Assunto:</b> " . $form_state['values']['subject']."
+	<br /><b>Mensagem:</b> <br />" . $msg;*/
+	
+	//$msg = str_replace("\n","<br />",$form_state['values']['message']);
+	
+	$msg = $form_state['values']['message'];
+	
+	$msg_nova = "Nome: " . $form_state['values']['name']."\n";
+	$msg_nova .= "E-mail:" . $form_state['values']['mail']."\n";
+	$msg_nova .= "Telefone:" . $form_state['values']['fone']."\n";
+	$msg_nova .= "Empresa: " . $form_state['values']['empresa']."\n";
+	$msg_nova .= "Assunto: " . $form_state['values']['subject']."\n";
+	$msg_nova .= "Mensagem:\n\n" . $msg;
+
+	$form_state['values']['message'] = $msg_nova;
+}
+
+

@@ -1,0 +1,96 @@
+# $Id: no.po,v 1.1.2.2 2008/12/02 12:40:47 tobiassjosten Exp $
+#
+# Norwegian translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  simplenews_template.module,v 1.2 2007/04/09 21:52:23 tbarregren
+#  simplenews_template.install,v 1.1 2007/03/22 20:27:54 tbarregren
+#  simplenews_template.info,v 1.1 2007/03/22 20:27:54 tbarregren
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Simplenews Template 5.x-1.1\n"
+"POT-Creation-Date: 2007-10-19 12:42+0200\n"
+"PO-Revision-Date: 2007-10-19 12:57+0100\n"
+"Last-Translator: Sten Johnsen <sten@bedre-bilder.no>\n"
+"Language-Team: THINEA Webteknologi <sten@thinea.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Poedit-Language: Norwegian Bokmal\n"
+"X-Poedit-Country: NORWAY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: simplenews_template.module:229;241
+msgid "Header"
+msgstr "Tittel"
+
+#: simplenews_template.module:230
+msgid "Enter a header common for all issues of this newsletter. For more information, see the !help."
+msgstr "Legg inn en header felles for alle utsendelsene av dette nyhetsbrevet. For mer informasjon, se !help."
+
+#: simplenews_template.module:232;259;286
+msgid "help page"
+msgstr "hjelpeside"
+
+#: simplenews_template.module:242
+msgid "Enter the content of the newsletter's header."
+msgstr "Skriv inn innholdet i nyhetsbrevet header."
+
+#: simplenews_template.module:256;268
+msgid "Footer"
+msgstr "Bunntekst"
+
+#: simplenews_template.module:257
+msgid "Enter a footer common for all issues of this newsletter. For more information, see the !help."
+msgstr "Legg inn en bunntekst felles for alle utgaver av dette nyhetsbrevet. For mer informasjon se !help."
+
+#: simplenews_template.module:269
+msgid "Enter the content of the newsletter's footer."
+msgstr "Legg inn innholdet i nyhetsbrevets bunntekst."
+
+#: simplenews_template.module:283
+msgid "Style"
+msgstr "Stil"
+
+#: simplenews_template.module:284
+msgid "For more information, see the !help."
+msgstr "For mer informasjon, se !help."
+
+#: simplenews_template.module:295
+msgid "Body background color"
+msgstr "Hovedtekst bakgrunn farge"
+
+#: simplenews_template.module:296
+msgid "Enter the body background color to be used in all issues of this newsletter."
+msgstr "Legg in hovedtekstens bakgrunnsfarge. Blir benyttet i alle utgaver av dette nyhetsbrevet."
+
+#: simplenews_template.module:303
+msgid "CSS"
+msgstr "CSS"
+
+#: simplenews_template.module:304
+msgid "Enter the CSS code to be included in all issues of this newsletter."
+msgstr "Legg inn CSS koden som skal legges ved alle utgaver av dette nyhetsbrevet."
+
+#: simplenews_template.module:0
+msgid "simplenews_template"
+msgstr "simplenews_template"
+
+#: simplenews_template.install:25
+msgid "!module was succefully installed."
+msgstr "!module ble installert."
+
+#: simplenews_template.install:37
+msgid "Failed to delete variables for Simplenews Template."
+msgstr "Kunne ikke slette variabler for Simplenews Template."
+
+#: simplenews_template.info:0
+msgid "Simplenews Template"
+msgstr "Simplenews Template"
+
+#: simplenews_template.info:0
+msgid "Extends Simplenews by providing a themable template with configurable header, footer and style."
+msgstr "Utvider Simplenews ved å legge til en mal med konfigurerbar topptekst og bunntekst og stil."
+

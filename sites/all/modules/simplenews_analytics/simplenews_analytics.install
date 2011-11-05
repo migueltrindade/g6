@@ -1,0 +1,25 @@
+<?php
+// $Id: simplenews_analytics.install,v 1.3 2009/01/16 21:13:51 sutharsan Exp $
+
+/**
+ * @file
+ * Simplenews analytics installation.
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function simplenews_analytics_install() {
+  drupal_set_message(t('Simplenews Analytics installed successfully. Help is available at: <a href="!help">Simplenews Analytics help page</a>.',
+    array('!help' => url('admin/help/simplenews_analytics'))));
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function simplenews_analytics_uninstall() {
+  variable_del('simplenews_analytics_utm_source');
+  variable_del('simplenews_analytics_utm_medium');
+  variable_del('simplenews_analytics_utm_campaign');
+  variable_del('simplenews_analytics_current_domain');
+}

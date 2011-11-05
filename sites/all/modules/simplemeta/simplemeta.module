@@ -1,0 +1,412 @@
+<?php
+// $Id: simplemeta.module,v 1.3 2010/06/04 01:35:21 adciservercom Exp $
+define('SIMPLEMETA_ADMIN_MENU_PATH', 'admin/simplemeta');
+function simplemeta_menu() {
+  return array( 
+    'admin/content/simplemeta' => array(
+      'title' => t('SimpleMeta settings'),
+      'page callback' => 'simplemeta_modern_menu',
+      'access arguments' => array('administer meta tags'),
+      'description' => 'SEO'
+    ),
+    SIMPLEMETA_ADMIN_MENU_PATH => array(
+      'title' => t('Add meta tags'),
+      'page callback' => 'simplemeta_nop',
+      'access arguments' => array('administer meta tags'),
+      'description' => 'SEO',
+    ),
+    'simplemeta/ajax' => array(
+      'page callback' => 'simplemeta_ajax',
+      'access arguments' => array('administer meta tags'),
+      'type' => MENU_CALLBACK,
+    ),
+    'simplemeta/search' => array(
+      'page callback' => 'simplemeta_ajax_search',
+      'access arguments' => array('administer meta tags'),
+      'type' => MENU_CALLBACK,
+    ),
+    'simplemeta/item/ajax' => array(
+      'page callback' => 'simplemeta_ajax_load_item',
+      'access arguments' => array('administer meta tags'),
+      'type' => MENU_CALLBACK,
+    ),
+    'simplemeta/save/item/ajax' => array(
+      'page callback' => 'simplemeta_ajax_save_item',
+      'access arguments' => array('administer meta tags'),
+      'type' => MENU_CALLBACK,
+    ),
+  ); 
+}
+if (user_access('administer meta tags'))
+  simplemeta_page_worker();
+function simplemeta_perm() {
+  return array('administer meta tags');
+}
+function simplemeta_nop() {
+  drupal_set_message(t('This function can be used only with admin_menu module'));
+  drupal_goto('');
+  exit();
+}
+function simplemeta_check_path($path) {
+  return preg_replace('#^/+|\\?.*$#', '', $path);
+}
+function simplemeta_raw_to_attrval($val) {
+  return strtr($val, array(
+    '\\' => '\\\\',
+    '"' => '\\"',
+  ));
+}
+function simplemeta_current_url() {
+  return isset($_GET['q']) ? preg_replace('/(#|\\?).*$/', '' , $_GET['q']) : '';
+}
+function simplemeta_add_meta($param = 'page') {
+  static $data;
+  
+  if ($param !== 'page') {
+    return $data;
+  }
+  
+  $destination = simplemeta_current_url();
+    
+  if ($q = db_query(
+  'SELECT
+    sd.title,
+    sd.description,
+    sd.keywords
+  FROM
+    {simplemeta_data} sd
+  WHERE
+    sd.path LIKE BINARY \'%s\'
+  LIMIT 0,1', $destination)) {
+  
+    $out = array();
+    
+    while ($r = db_fetch_array($q)) {
+      foreach ($r as $key => $content) {
+    
+        if ($content)
+          $out[]= '<meta name="' . $key . '" content="' . simplemeta_raw_to_attrval($content) . '" />';
+        $data[$key] = $content ? $content : '';    
+      }
+      $data['found'] = 1;
+    }
+  
+    drupal_set_html_head(implode("\r\n", $out));
+  }
+}
+function simplemeta_ajax() {
+  $url = $_POST['u'];
+  $out = array();
+  
+  $title = $_POST['t'];
+  $keywords = $_POST['k'];
+  $description = $_POST['d'];
+  
+  if (!$title && !$keywords && !$description) {  
+    // Delete item
+    $out['r'] = !!db_query(
+      'DELETE FROM
+        {simplemeta_data}
+      WHERE
+        path LIKE BINARY \'%s\'',
+      $url
+    );
+  }
+  else {
+    // Save or insert
+    if (db_result(db_query(
+      'SELECT
+        COUNT(*)
+      FROM
+        {simplemeta_data} sd
+      WHERE
+        sd.path LIKE BINARY \'%s\'',
+      $url)) >0) {
+    
+      // Update
+      $out['r'] = !!db_query(
+        'UPDATE
+          {simplemeta_data}
+        SET
+          title = \'%s\',
+          keywords = \'%s\',
+          description = \'%s\'
+        WHERE
+          path LIKE BINARY \'%s\'',
+        check_plain($title),
+        check_plain($keywords),        
+        check_plain($description),
+        check_plain($url)
+      );
+      
+    } else {
+      // Insert
+      $out['r'] = !!db_query(
+        'INSERT INTO
+          {simplemeta_data}
+          (title,keywords,description,path)
+        VALUES
+          (\'%s\',\'%s\',\'%s\',\'%s\')
+        ',
+        check_plain($title),
+        check_plain($keywords),
+        check_plain($description),
+        check_plain($url)
+      );
+    }
+  }
+  
+  drupal_json($out);
+  exit();
+}
+function simplemeta_page_worker() {
+  
+  $path = drupal_get_path('module', 'simplemeta');
+  
+  $data = simplemeta_add_meta('get');
+  
+  drupal_add_css( $path . '/css/simplemeta.css');
+  drupal_add_js( $path . '/js/simplemeta.js', 'module', 'header', TRUE);
+  drupal_add_js( array(
+    'simplemeta' => array(
+    'admin_menu' => url(SIMPLEMETA_ADMIN_MENU_PATH),
+      'url' => simplemeta_current_url(),
+      'saved' => t('Saved'),
+      'saved_error' => t('Can\'t save!'),
+      'deleted' => t('Deleted'),
+      'deleted_error' => t('Can\'t delete!'),
+      'form_items' => array(
+        array(
+          'type' => 'text',
+          'before' => t('Title'),
+          'val' => $data['title'],
+          'id' => 'simplemeta-form-title',
+        ),
+        array(
+          'type' => 'text',
+          'before' => t('Keywords'),
+          'val' => $data['keywords'],
+          'id' => 'simplemeta-form-keywords',
+        ),
+        array(
+          'type' => 'textarea',
+          'before' => t('Description'),
+          'val' => $data['description'],
+          'id' => 'simplemeta-form-description',
+        ),
+        array(
+          'type' => 'button',
+          'val' => 'Save',
+          'id' => 'simplemeta-form-save',
+        ),
+        array(
+          'type' => 'button',
+          'val' => 'Delete',
+          'id' => 'simplemeta-form-delete',
+        )
+      ),
+    ),
+  ), 'setting');
+  
+}
+function simplemeta_enable() {
+  @db_query(
+    'UPDATE
+      {system}
+    SET
+      weight = %d
+    WHERE
+      name = \'%s\'
+    AND
+    type = \'%s\'
+    LIMIT 1',
+    101,
+  'simplemeta',
+  'module'
+  );
+}
+function simplemeta_theme() {  
+  return array(
+    'simplemeta_modern' => array(
+      'arguments' => array(),
+      'template' => 'templates/modern',
+    ),
+  );
+}
+function simplemeta_modern_menu() {
+  $path = drupal_get_path('module', 'simplemeta');
+  drupal_add_css( $path . '/css/admin.css');
+  drupal_add_js( array(
+    'simplemeta' => array(
+      'confirmation' => t('Are you sure want to delete item') . '?',
+      'deletion_error' => t('Can\'t delete this meta item') . '!',
+      'saving_error' => t('Duplicate path, can\'t save') . '!',
+    ) 
+  ) , 'setting');
+  drupal_add_js( $path . '/js/admin.js');
+  
+  return theme('simplemeta_modern');
+}
+function simplemeta_ajax_search() {
+  
+  $query = check_plain($_POST['s']);
+  $page = $_POST['p'] - 0;
+  $items = $_POST['i'] - 0;
+  
+  $out = array('length' => 0);
+  
+  if ($q = @db_query(
+    'SELECT
+      sd.path,
+      sd.sid
+    FROM
+      {simplemeta_data} sd
+    LEFT JOIN
+      {url_alias} ua
+    ON
+      ua.src = sd.path
+    WHERE
+      sd.path LIKE \'%%%s%%\' OR ua.dst LIKE \'%%%s%%\'
+    LIMIT
+      %d,%d',
+    $query, $query, $page * $items, $items)) {
+    
+    while ($r = db_fetch_object($q)) {
+      $out[$r->sid] = $r->path;
+      
+    }
+    
+    $out['length'] = db_result(db_query(
+    'SELECT
+      COUNT(*)
+    FROM
+      {simplemeta_data} sd
+    LEFT JOIN
+      {url_alias} ua
+    ON
+      ua.src = sd.path
+    WHERE
+      sd.path LIKE \'%%%s%%\' OR ua.dst LIKE \'%%%s%%\'
+    ',
+    $query, $query, $page * $items, $items)) - 0;
+  }
+  
+  drupal_json($out);
+  exit();
+  
+}
+function simplemeta_ajax_load_item() {
+  $id = $_POST['i'] - 0;
+  
+  $out = 0;
+  
+  if ($q=db_query(
+    'SELECT
+      *
+    FROM
+      {simplemeta_data} sd
+    WHERE
+      sid = %d', $id)) {
+    
+    $out = db_fetch_object($q);
+  }
+  
+  drupal_json($out);
+  exit();
+  
+}
+function simplemeta_ajax_save_item() {
+  $sid = $_POST['i'] - 0;
+  $out = array();
+  
+  $url = $_POST['p'];
+  $url = drupal_get_normal_path($url);
+  
+  $title = $_POST['t'];
+  $keywords = $_POST['k'];
+  $description = $_POST['d'];
+  
+  
+  
+  if (!$url && !$title && !$keywords && !$description) {  
+    // Delete item
+    $out['r'] = !!db_query(
+      'DELETE FROM
+        {simplemeta_data}
+      WHERE
+        sid = %d',
+      $sid
+    );
+  }
+  else {
+    // Check is unique?
+    if ($check_sid = db_result(db_query(
+    'SELECT
+      sd.sid
+    FROM
+      {simplemeta_data} sd
+    WHERE
+      sd.path LIKE BINARY \'%s\'',
+    $url)) )  {
+    
+      if ( ($check_sid > 0) && ($sid<0)) {
+        $out['r2'] = 1;
+        drupal_json($out);
+        exit();
+      }
+      
+      if ($check_sid != $sid) {
+        $out['r2'] = 2;
+        drupal_json($out);
+        exit();    
+      }
+    }
+    // Save or insert
+    if (db_result(db_query(
+      'SELECT
+        COUNT(*)
+      FROM
+        {simplemeta_data} sd
+      WHERE
+        sd.sid = %d',
+      $sid)) >0) {
+    
+      // Update
+      $out['r'] = !!db_query(
+        'UPDATE
+          {simplemeta_data}
+        SET
+          title = \'%s\',
+          keywords = \'%s\',
+          description = \'%s\',
+          path = \'%s\'
+        WHERE
+          sid = %d',
+        check_plain($title),
+        check_plain($keywords),        
+        check_plain($description),
+        check_plain($url),
+        $sid
+      );
+      
+    } else {
+      // Insert
+      $out['r'] = !!db_query(
+        'INSERT INTO
+          {simplemeta_data}
+          (title,keywords,description,path)
+        VALUES
+          (\'%s\',\'%s\',\'%s\',\'%s\')
+        ',
+        check_plain($title),
+        check_plain($keywords),        
+        check_plain($description),
+        check_plain($url)
+      );
+    }
+  }
+  
+  drupal_json($out);
+  exit();
+}
+simplemeta_add_meta();

@@ -1,0 +1,12 @@
+* { padding:0; margin:0; font-family:Verdana, Geneva, sans-serif; font-size:12px; }
+p { margin:0 0 10px 0; }
+img, img a { border:none; }
+.p10 { padding:10px; }
+.p30 { padding:30px; }
+hr { padding:0px; margin:10px 0; }
+.news_rodape { margin:20px auto; }
+.barra_divisao{ height:53px; padding-left:20px; }
+.barra_divisao a { color:#FFF; font-size:22px; letter-spacing:0px; color:#FFF; line-height:53px; text-decoration:none; display:block; }
+#treinamentos { background: url(http://www.migueltrindade.com.br/grade6/sites/all/themes/framework/images/bg-treinamentos.jpg) repeat-x; }
+#esportiva { background: url(http://www.migueltrindade.com.br/grade6/sites/all/themes/framework/images/bg-esportiva.jpg) repeat-x; }
+#profissional { background: url(http://www.migueltrindade.com.br/grade6/sites/all/themes/framework/images/bg-profissional.jpg) repeat-x; }

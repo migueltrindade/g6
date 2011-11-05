@@ -1,0 +1,20 @@
+1. Copy the entire user_force_term folder to the sites/all/modules folder or
+   to a site-specific modules folder.
+
+2. Create the vocabulary you wish to use with user_force_term. Only node
+   types associated with the vocabulary are affected by the module.
+
+3. Add some terms to the vocabulary.
+
+4. Go to "Administer -> User management -> Users -> Force taxonomy term" and
+   choose the vocabulary you just created and populated.
+
+5. Go to "Administer -> User management -> Users" and edit the users whose
+   contributions you wish to force to be associated with a term from the
+   selected vocabulary.
+
+   From the 'Term association' dropdown in the 'Account information' fieldset
+   choose the term you want the user's contributions to be associated with or
+   '<none>' if you don't want a forced term association.
+
+$Id: INSTALL.txt,v 1.5.2.1 2009/07/09 10:05:32 wulff Exp $

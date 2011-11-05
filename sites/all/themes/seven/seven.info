@@ -1,0 +1,18 @@
+
+name = Seven
+description = A simple one-column, tableless, fluid width administration theme.
+core = 6.x
+engine = phptemplate
+
+stylesheets[all][] = reset.css
+stylesheets[all][] = style.css
+stylesheets[all][] = vertical_tabs.css
+
+regions[content] = Content
+
+; Information added by drupal.org packaging script on 2011-05-03
+version = "6.x-1.0-rc1"
+core = "6.x"
+project = "seven"
+datestamp = "1304412116"
+

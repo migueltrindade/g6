@@ -1,0 +1,19 @@
+name = Simple Meta
+description = The Simple Meta module provides a flexible method to set meta tags, such as page title, keywords and description for current website page.
+package = SEO
+core = 6.x
+version = "6.x-1.2"
+
+; Information added by drupal.org packaging script on 2010-05-28
+version = "6.x-1.2"
+core = "6.x"
+project = "simplemeta"
+datestamp = "1275012907"
+
+
+; Information added by drupal.org packaging script on 2010-07-12
+version = "6.x-1.3"
+core = "6.x"
+project = "simplemeta"
+datestamp = "1278896412"
+

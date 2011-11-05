@@ -1,0 +1,44 @@
+#simplemeta-ajax-form, #simplemeta-ajax-form *{
+	margin: 0;
+	padding: 0;
+}
+#simplemeta-ajax-form {
+	
+	position: fixed;
+	left: 0;
+	background: #bbb;
+	background: rgba(187,187,187,0.6);
+	-webkit-box-shadow: 0 0 4px #333;
+	-moz-box-shadow: 0 0 4px #333;
+	padding: 8px;
+	margin-bottom: 100px;
+	z-index: 100;
+}
+#simplemeta-ajax-form input{
+	width: 250px;
+}
+#simplemeta-ajax-form button  {
+	width: 50px;
+	cursor: pointer;
+	margin: 4px;
+	height: 28px;
+	background: transparent url(imgs/buttons.png) no-repeat 0 -28px;
+	border: 0;
+}
+#simplemeta-ajax-form .simplemeta-form-save,
+#simplemeta-ajax-form .simplemeta-form-delete {
+	display: inline-block;
+	height: 28px;
+	float: right;
+}
+#simplemeta-ajax-form .simplemeta-form-save button {
+	background-position: -124px -28px;
+	width: 55px;
+}
+#simplemeta-ajax-form .simplemeta-form-delete button {	
+	background-position: -53px -28px;	
+	width: 71px;
+}
+#simplemeta-ajax-form textarea{
+	width: 252px;
+}

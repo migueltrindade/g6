@@ -1,0 +1,45 @@
+<?php
+// $Id: simplenews_template.install,v 1.3.2.3 2009/11/13 22:52:21 hanoii Exp $
+
+/**
+ * @file
+ * Installs Simplenews Template.
+ */
+
+function _simplenews_template_install_db_query($sql) {
+  if (!($result = db_query($sql))) {
+    drupal_set_mesage("Simplenews Template failed to execute following SQL-query: $sql");
+  }
+  return $result;
+}
+
+/**
+ * Implementation of hook_install().
+ */
+function simplenews_template_install() {
+  // Weight module to be called after Simplenews and Mime Mail
+  db_query("UPDATE {system} SET weight = 1 WHERE name = 'simplenews_template'");
+  variable_set('simplenews_format', 'html');
+}
+
+/**
+ * Rebuild theme registry because of some theme function definitions changes
+ */
+function simplenews_template_update_6001() {
+  drupal_rebuild_theme_registry();
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function simplenews_template_uninstall() {
+  global $conf;
+
+  // Delete variables.
+  if (!($result = _simplenews_template_install_db_query("SELECT name FROM {variable} WHERE name LIKE 'simplenews_template_%'"))) return;
+  while ($row = db_fetch_array($result)) {
+    unset($conf[$row['name']]);
+  }
+  if (!($result = _simplenews_template_install_db_query("DELETE FROM {variable} WHERE name LIKE 'simplenews_template_%'"))) return;
+  cache_clear_all('variables', 'cache');
+}

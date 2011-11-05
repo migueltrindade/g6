@@ -1,0 +1,472 @@
+# Portuguese, Brazil translation of Simplenews (all releases)
+# Copyright (c) 2010 by the Portuguese, Brazil translation team
+# Generated from files:
+#  simplenews.module,v 1.48.2.49 2008/07/28 12:00:09 sutharsan
+#  simplenews.admin.inc,v 1.5.2.49 2009/03/09 07:45:19 sutharsan
+#  simplenews.admin.inc,v 1.5.2.51 2009/05/08 07:56:43 sutharsan
+#  simplenews.admin.inc,v 1.5.2.53 2010/01/02 21:04:31 sutharsan
+#  simplenews.admin.inc,v 1.5.2.54 2010/04/19 08:14:29 sutharsan
+#  simplenews.module,v 1.76.2.129 2009/03/09 07:45:19 sutharsan
+#  simplenews.module,v 1.76.2.141 2009/11/24 21:59:54 sutharsan
+#  simplenews.module,v 1.76.2.154 2010/03/30 07:35:39 sutharsan
+#  simplenews.module,v 1.76.2.156 2010/05/19 14:01:22 sutharsan
+#  simplenews.subscription.inc,v 1.2.2.10 2009/03/06 20:46:36 sutharsan
+#  simplenews.js,v 1.1.2.2 2008/09/30 20:07:51 sutharsan
+#  simplenews/simplenews.info: n/a
+#  simplenews.info,v 1.5.2.1 2008/08/04 06:11:51 sutharsan
+#  simplenews_action.info,v 1.1.2.3 2008/07/15 10:05:08 sutharsan
+#  simplenews_handler_field_newsletter_s_status.inc,v 1.1.2.4 2009/01/02 11:59:34 sutharsan
+#  simplenews_handler_filter_newsletter_s_status.inc,v 1.1.2.4 2009/01/02 11:59:34 sutharsan
+#  simplenews_views.inc,v 1.1.2.1 2008/02/23 14:38:58 sutharsan
+#  simplenews.install,v 1.3.2.7 2008/06/25 19:21:55 sutharsan
+#  simplenews.install,v 1.8.2.24 2009/03/09 07:45:19 sutharsan
+#  simplenews_action.module,v 1.1.2.6 2009/01/21 08:21:08 sutharsan
+#  simplenews.install,v 1.8.2.26 2009/10/24 16:30:44 sutharsan
+#  simplenews.install,v 1.8.2.31 2010/03/30 12:24:26 sutharsan
+#  simplenews_action.module,v 1.1.2.8 2010/01/03 14:30:56 sutharsan
+#  simplenews.install,v 1.8.2.32 2010/04/19 08:07:42 sutharsan
+#  simplenews.install,v 1.8.2.33 2010/05/21 15:37:41 sutharsan
+#  simplenews.views.inc,v 1.1.2.4 2009/01/02 11:59:34 sutharsan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Simplenews (all releases)\n"
+"POT-Creation-Date: 2010-06-01 23:47+0000\n"
+"PO-Revision-Date: 2009-11-26 12:20+0000\n"
+"Language-Team: Portuguese, Brazil\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: simplenews.module:1695; simplenews.admin.inc:26,26,26,26,26
+msgid "Title"
+msgstr "Título"
+
+#: simplenews.module:1920,2004,2153; simplenews.admin.inc:478,659,1178,478,659,1178,478,659,1178,479,660,1179,479,660,1179
+msgid "Status"
+msgstr "Status"
+
+#: simplenews.module:122,1944,2426,2453,2494,2536,2574,156,162,162,162,162; simplenews.admin.inc:133,220,246,312,684,133,220,246,312,684,133,220,246,312,684,133,221,247,313,685,133,221,247,313,685
+msgid "Delete"
+msgstr "Apagar"
+
+#: simplenews.module:1921,2005,2409; simplenews.admin.inc:101,660,1179,101,660,1179,101,660,1179,101,661,1180,101,661,1180
+msgid "Operations"
+msgstr "Operações"
+
+#: simplenews.module:1919,2003; simplenews.admin.inc:658,1177,658,1177,658,1177,659,1178,659,1178
+msgid "Username"
+msgstr "Usuário"
+
+#: simplenews.module:2059,2454,2575,2634,2662; simplenews.admin.inc:313,360,313,360,313,360,314,361,314,361; simplenews.subscription.inc:142,168,142,168,142,168,142,168,142,168
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: simplenews.module:995,1035,1080,1098,2633,1224,1270,1291,1241,1287,1308,1244,1290,1311,1267,1313,1334,1267,1313,1334; simplenews.admin.inc:424,424,424,425,425; simplenews.subscription.inc:71,141,71,141,71,141,71,141,71,141
+msgid "Subscribe"
+msgstr "Assinar"
+
+#: simplenews.module:999,1043,1076,1098,2661,1229,1266,1291,1246,1283,1308,1249,1286,1311,1272,1309,1334,1272,1309,1334; simplenews.admin.inc:582,582,582,583,583; simplenews.subscription.inc:79,167,79,167,79,167,79,167,79,167
+msgid "Unsubscribe"
+msgstr "Cancelar assinatura"
+
+#: simplenews.module:2513; simplenews.admin.inc:155,155,155,156,156
+msgid "Description"
+msgstr "Descrição"
+
+#: simplenews.module:281,2293; simplenews.admin.inc:821,821,821,822,822
+msgid "Priority"
+msgstr "Prioridade"
+
+#: simplenews.module:1695; simplenews.admin.inc:26,26,26,26,26
+msgid "Edit"
+msgstr "Editar"
+
+#: simplenews.module:1863,1885; simplenews.admin.inc:1103,1126,1103,1126,1103,1126,1104,1127,1104,1127
+msgid "Reset"
+msgstr "Restaurar"
+
+#: simplenews.module:2573; simplenews.admin.inc:311,358,311,358,311,358,312,359,312,359
+msgid "This action cannot be undone."
+msgstr "Esta operação não poderá ser desfeita."
+
+#: simplenews.module:2520; simplenews.admin.inc:163,163,163,164,164
+msgid "Weight"
+msgstr "Peso"
+
+#: simplenews.module:283,2294,624,638,638,638,638; simplenews.admin.inc:822,822,822,823,823
+msgid "none"
+msgstr "nenhum"
+
+#: simplenews.module:1723,1958; simplenews.admin.inc:57,701,791,57,701,791,57,701,791,57,702,792,57,702,792
+msgid "edit"
+msgstr "editar"
+
+#: simplenews.module:2191,2200,196,202,202,202,202; simplenews.admin.inc:500,508,500,508,500,508,501,509,501,509
+msgid "Export"
+msgstr "Exportar"
+
+#: simplenews.admin.inc:206,206,206,207,207; simplenews.module:1302,1319,1322,1345,1345; simplenews.js:0,0,0,0,0
+msgid "Save"
+msgstr "Salvar"
+
+#: simplenews.module:981,1024,1949,1208,1225,1228,1251,1251; simplenews.admin.inc:689,689,689,690,690; simplenews.subscription.inc:57,57,57,57,57
+msgid "Update"
+msgstr "Atualizar"
+
+#: simplenews.module:276,2287; simplenews.admin.inc:814,814,814,815,815
+msgid "Format"
+msgstr "Formato"
+
+#: simplenews.module:1719; simplenews.admin.inc:53,53,53,53,53
+msgid "n/a"
+msgstr "n/d"
+
+#: simplenews.info:0,0,0,0,0,0; simplenews_action/simplenews_action.info:0,0,0,0,0
+msgid "Mail"
+msgstr "Email"
+
+#: simplenews.admin.inc:657,1176,657,1176,657,1176,658,1177,658,1177; simplenews.module:1283,1300,1303,1326,1326
+msgid "Email"
+msgstr "Email"
+
+#: simplenews.module:1935; simplenews.admin.inc:675,675,675,676,676
+msgid "Update options"
+msgstr "Opções de atualização"
+
+#: simplenews.module:1695,1750; simplenews.admin.inc:26,1223,26,1223,26,1223,26,1224,26,1224
+msgid "Published"
+msgstr "Publicado"
+
+#: simplenews.module:1656,1733,1856,1879; simplenews.admin.inc:67,91,1096,1120,67,91,1096,1120,67,91,1096,1120,67,91,1097,1121,67,91,1097,1121
+msgid "Filter"
+msgstr "Filtrar"
+
+#: simplenews.module:2059; simplenews.admin.inc:359,359,359,360,360
+msgid "Delete all"
+msgstr "Apagar tudo"
+
+#: simplenews.module:2374; simplenews.admin.inc:902,902,902,903,903
+msgid "Unlimited"
+msgstr "Ilimitado"
+
+#: simplenews.module:1695,1758; simplenews.admin.inc:26,1238,26,1238,26,1238,26,1239,26,1239; simplenews_handler_field_newsletter_s_status.inc:21,21,21,21,21; simplenews_handler_filter_newsletter_s_status.inc:17,17,17,17,17
+msgid "Sent"
+msgstr "Enviado"
+
+#: simplenews_views.inc:73; simplenews_handler_field_newsletter_s_status.inc:19,19,19,19,19; simplenews_handler_filter_newsletter_s_status.inc:16,16,16,16,16
+msgid "Pending"
+msgstr "Pendente"
+
+#: simplenews.module:283,2294,627,641,641,641,641; simplenews.admin.inc:822,822,822,823,823
+msgid "normal"
+msgstr "normal"
+
+#: simplenews.module:1970; simplenews.admin.inc:713,713,713,714,714
+msgid "No items selected."
+msgstr "Nenhum item foi selecionado."
+
+#: simplenews.module:1985,1989; simplenews.admin.inc:725,729,725,729,725,729,726,730,726,730
+msgid "The update has been performed."
+msgstr "A atualização foi concluída."
+
+#: simplenews.module:2376; simplenews.admin.inc:911,911,911,912,912
+msgid "Cron throttle"
+msgstr "Limite do cron"
+
+#: simplenews.module:2550; simplenews.admin.inc:262,262,262,263,263
+msgid "Created new term %name."
+msgstr "O termo %name foi criado."
+
+#: simplenews.module:1695; simplenews.admin.inc:26,26,26,26,26
+msgid "Date created"
+msgstr "Data de criação"
+
+#: simplenews.module:1750; simplenews.admin.inc:1223,1223,1223,1224,1224
+msgid "Not published"
+msgstr "Não publicado"
+
+#: simplenews.module:283,2294,628,642,642,642,642; simplenews.admin.inc:822,822,822,823,823
+msgid "low"
+msgstr "baixo"
+
+#: simplenews.module:283,2294,626,640,640,640,640; simplenews.admin.inc:822,822,822,823,823
+msgid "high"
+msgstr "alto"
+
+#: simplenews.module:2255,2333; simplenews.admin.inc:177,864,177,864,177,864,178,865,178,865
+msgid "From name"
+msgstr "Nome do remetente"
+
+#: simplenews.module:2658; simplenews.subscription.inc:164,164,164,164,164
+msgid "Confirm unsubscription"
+msgstr "Confirmar cancelamento de assinatura"
+
+#: simplenews.module:1695,235,241,241,241,241; simplenews.install:116,239,244,239,244,251,256,251,256,251,256; simplenews.admin.inc:26,26,26,26,26; simplenews_action/simplenews_action.module:211,277,211,277,211,277,211,277,211,277
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: simplenews.module:1942; simplenews.admin.inc:682,682,682,683,683
+msgid "Activate"
+msgstr "Ativar"
+
+#: simplenews.module:1772,2170; simplenews.admin.inc:489,1045,489,1045,489,1045,490,1046,490,1046
+msgid "Subscribed to"
+msgstr "Assinando"
+
+#: simplenews.module:10,56; simplenews.install:223,223,235,235,235; simplenews_action/simplenews_action.module:125,125,125,125,125
+msgid "Newsletter issue"
+msgstr "Edição da newsletter"
+
+#: simplenews.module:283,2294,625,639,639,639,639; simplenews.admin.inc:822,822,822,823,823
+msgid "highest"
+msgstr "máxima"
+
+#: simplenews.module:283,2294,629,643,643,643,643; simplenews.admin.inc:822,822,822,823,823
+msgid "lowest"
+msgstr "mínima"
+
+#: simplenews.module:286,2299,634,648,648,648,648; simplenews.admin.inc:828,828,828,829,829
+msgid "Request receipt"
+msgstr "Pedir recibo de entrega"
+
+#: simplenews.module:292,303,2306,553,565,567,579,567,579,567,579,567,579; simplenews.admin.inc:835,835,835,836,836
+msgid "Don't send now"
+msgstr "Não enviar agora"
+
+#: simplenews.module:293,304,2306,554,566,568,580,568,580,568,580,568,580; simplenews.admin.inc:835,835,835,836,836
+msgid "Send one test newsletter to the test address"
+msgstr "Enviar uma newsletter para um endereço de teste"
+
+#: simplenews.module:294,2306,526,555,540,569,540,569,540,569,540,569; simplenews.admin.inc:835,835,835,836,836
+msgid "Send newsletter"
+msgstr "Enviar newsletter"
+
+#: simplenews.module:342; simplenews.admin.inc:760,760,760,761,761
+msgid "Newsletter vocabulary"
+msgstr "Vocabulário de newsletter"
+
+#: simplenews.module:1015,2105; simplenews.subscription.inc:51,51,51,51,51
+msgid "You must select at least one newsletter."
+msgstr "Você precisa selecionar ao menos uma newsletter."
+
+#: simplenews.module:1033; simplenews.subscription.inc:69,69,69,69,69
+msgid "The newsletter subscriptions for %mail have been updated."
+msgstr "As inscrições para %mail foram atualizadas."
+
+#: simplenews.module:1671; simplenews.admin.inc:1025,1025,1025,1026,1026
+msgid "all newsletters"
+msgstr "todas as newsletters"
+
+#: simplenews.module:1674; simplenews.admin.inc:1028,1028,1028,1029,1029
+msgid "orphaned newsletters"
+msgstr "newsletters órfãs"
+
+#: simplenews.module:1690; simplenews.admin.inc:21,21,21,21,21
+msgid "Show issues from"
+msgstr "Exibir edições de"
+
+#: simplenews.module:1729; simplenews.admin.inc:63,63,63,63,63
+msgid "No newsletters available."
+msgstr "Não há newsletters disponíveis."
+
+#: simplenews.module:1754; simplenews.admin.inc:1227,1227,1227,1228,1228
+msgid "Inactive: no newsletters will be sent"
+msgstr "Inativo: nenhuma newsletter será enviada"
+
+#: simplenews.module:1754; simplenews.admin.inc:1227,1227,1227,1228,1228
+msgid "Active: user will receive newsletters"
+msgstr "Ativo: o usuário receberá newsletters"
+
+#: simplenews.module:1758; simplenews.admin.inc:1236,1236,1236,1237,1237; simplenews_handler_field_newsletter_s_status.inc:17,17,17,17,17; simplenews_handler_filter_newsletter_s_status.inc:15,15,15,15,15
+msgid "Not sent"
+msgstr "Não enviada"
+
+#: simplenews.module:1758; simplenews.admin.inc:1237,1237,1237,1238,1238
+msgid "Currently sending by cron"
+msgstr "Sendo enviada pelo cron"
+
+#: simplenews.module:1774; simplenews.admin.inc:1047,1047,1047,1048,1048
+msgid "All newsletters"
+msgstr "Todas as newsletters"
+
+#: simplenews.module:1836; simplenews.admin.inc:1076,1076,1076,1077,1077
+msgid "Subscription filters"
+msgstr "Filtros de assinaturas"
+
+#: simplenews.module:1943; simplenews.admin.inc:683,683,683,684,684
+msgid "Inactivate"
+msgstr "Desativar"
+
+#: simplenews.module:2022; simplenews.admin.inc:1196,1196,1196,1197,1197
+msgid "No subscriptions available."
+msgstr "Não há assinaturas disponíveis."
+
+#: simplenews.module:2057; simplenews.admin.inc:356,356,356,357,357
+msgid "Are you sure you want to delete these subscriptions?"
+msgstr "Você tem certeza que deseja apagar estas assinaturas?"
+
+#: simplenews.module:2067; simplenews.admin.inc:369,369,369,370,370
+msgid "The subscriptions have been deleted."
+msgstr "As assinaturas foram apagadas."
+
+#: simplenews.module:2131; simplenews.admin.inc:452,452,452,453,453
+msgid "The following addresses were added or updated: %added."
+msgstr ""
+"Os seguintes endereços de email foram adicionados ou atualizados: "
+"%added."
+
+#: simplenews.module:2138; simplenews.admin.inc:459,459,459,460,460
+msgid ""
+"The addresses were subscribed to the following newsletters: "
+"%newsletters."
+msgstr ""
+"Os endereços de email foram adicionados à lista de assinaturas das "
+"seguintes newsletters: %newsletters."
+
+#: simplenews.module:2141; simplenews.admin.inc:462,462,462,463,463
+msgid "No addresses were added."
+msgstr "Nenhum endereço foi adicionado."
+
+#: simplenews.module:2145; simplenews.admin.inc:466,623,466,623,466,623,467,624,467,624
+msgid "The following addresses were invalid: %invalid."
+msgstr "Os seguintes endereços de email são inválidos: %invalid."
+
+#: simplenews.module:2159; simplenews.admin.inc:479,479,479,480,480
+msgid "Active users"
+msgstr "Usuários ativos"
+
+#: simplenews.module:2164; simplenews.admin.inc:479,479,479,480,480
+msgid "Inactive users"
+msgstr "Usuários inativos"
+
+#: simplenews.module:2228; simplenews.admin.inc:544,544,544,545,545
+msgid "No addresses were found."
+msgstr "Nenhum endereço foi encontrado."
+
+#: simplenews.module:2250,2327; simplenews.admin.inc:172,858,172,858,172,858,173,859,173,859
+msgid "Sender information"
+msgstr "Informação do remetente"
+
+#: simplenews.module:2268; simplenews.admin.inc:191,191,191,192,192
+msgid "HTML to text conversion"
+msgstr "Conversão HTML -> texto"
+
+#: simplenews.module:2271; simplenews.admin.inc:193,193,193,194,194
+msgid ""
+"When your newsletter is sent as plain text, these options will "
+"determine how the conversion to text is performed."
+msgstr ""
+"Se sua newsletter foi enviada como texto puro, estas opções vão "
+"determinar como a conversão de HTML para texto deve se dar."
+
+#: simplenews.module:2274; simplenews.admin.inc:197,197,197,198,198
+msgid "Hyperlink conversion"
+msgstr "Conversão de hiperlinks"
+
+#: simplenews.module:2281; simplenews.admin.inc:804,804,804,805,805
+msgid "Default newsletter options"
+msgstr "Opções padrão para as newsletters"
+
+#: simplenews.module:2284; simplenews.admin.inc:806,806,806,807,807
+msgid ""
+"These options will be the defaults for new newsletters, but can be "
+"overridden in the newsletter editing form."
+msgstr ""
+
+#: simplenews.module:2322; simplenews.admin.inc:853,853,853,854,854
+msgid "Allow test address override"
+msgstr "Permitir sobrescrever endereços de email de teste"
+
+#: simplenews.module:2353; simplenews.admin.inc:948,948,948,949,949
+msgid "Synchronize with account"
+msgstr "Sincronizar com a conta do usuário"
+
+#: simplenews.module:2355; simplenews.admin.inc:950
+msgid ""
+"When checked subscriptions will be synchronized with site accounts. "
+"When accounts are deteted, subscriptions with the same email address "
+"will be removed. When site accounts are blocked/unblocked, "
+"subscriptions will be deactivated/activated. When not checked "
+"subscriptions will be unchanged when associated accounts are deleted "
+"or blocked."
+msgstr ""
+
+#: simplenews.module:2379; simplenews.admin.inc:914,914,914,915,915
+msgid ""
+"Sets the numbers of newsletters sent per cron run. Failure to send "
+"will also be counted."
+msgstr ""
+
+#: simplenews.module:2383; simplenews.admin.inc:925,925,925,926,926
+msgid "Log emails"
+msgstr "Registrar emails"
+
+#: simplenews.module:2385; simplenews.admin.inc:927,927,927,928,928
+msgid ""
+"When checked all outgoing simplenews emails are logged in the system "
+"log. A logged email does not guarantee that it is send or will be "
+"delivered. It only indicates that a message is send to the PHP mail() "
+"function. No status information is available of delivery by the PHP "
+"mail() function."
+msgstr ""
+
+#: simplenews.module:2409,2505; simplenews.admin.inc:101,146,101,146,101,146,101,147,101,147
+msgid "Newsletter name"
+msgstr "Nome da newsletter"
+
+#: simplenews.module:2412; simplenews.admin.inc:106,106,106,106,106
+msgid "edit newsletter"
+msgstr "editar newsletter"
+
+#: simplenews.module:2416; simplenews.admin.inc:110,110,110,110,110
+msgid "There are currently no newsletter series."
+msgstr "Não há newsletters disponíveis."
+
+#: simplenews.module:2553; simplenews.install:138,266,266,278,278,278; simplenews.admin.inc:265,265,265,266,266
+msgid "Updated term %name."
+msgstr "O termo %name foi atualizado."
+
+#: simplenews.module:2586; simplenews.admin.inc:324,324,324,325,325
+msgid "Newsletter %title has been deleted."
+msgstr "A newsletter %title foi apagada."
+
+#: simplenews.module:2630; simplenews.subscription.inc:138,138,138,138,138
+msgid "Confirm subscription"
+msgstr "Confirmar assinatura"
+
+#: simplenews.module:2632; simplenews.subscription.inc:140,140,140,140,140
+msgid "You always have the option of unsubscribing later."
+msgstr "Note que você poderá cancelar a assinatura quando quiser."
+
+#: simplenews.module:851,1244,1308,1311,2477; simplenews.install:132
+msgid "newsletter"
+msgstr ""
+
+#: simplenews.module:1385,1391,1032,1151,1617,1675,1678,1683,1725,1737,1740,1049,1168,1647,1705,1708,1713,1759,1771,1774,1052,1171,1650,1709,1712,1740,1789,1798,1801,1075,1194,1673,1732,1735,1763,1812,1821,1824,1075,1194,1673,1732,1735,1763,1812,1821,1824; simplenews.admin.inc:791,791,791,792,792
+msgid "simplenews"
+msgstr "simplenews"
+
+#: simplenews.info:0,0,0,0,0,0; simplenews.views.inc:17,17,17,17,17; simplenews.module:2299,215,2355,221,2387,221,2410,221,2410,221
+msgid "Simplenews"
+msgstr "Simplenews"
+
+#: simplenews.subscription.inc:45,45,45,45,45; simplenews.module:1309,1326,1329,1352,1352
+msgid "The email address you supplied is not valid."
+msgstr "O email que você digitou não é válido."
+
+#: simplenews.subscription.inc:77,77,77,77,77; simplenews.module:1325,1342,1345,1368,1368
+msgid ""
+"You will receive a confirmation email shortly containing further "
+"instructions on how to complete your subscription."
+msgstr ""
+"Você receberá um email de confirmação contendo instruções para "
+"completar a inscrição."
+
+#: simplenews.subscription.inc:85,85,85,85,85; simplenews.module:1334,1351,1354,1377,1377
+msgid ""
+"You will receive a confirmation email shortly containing further "
+"instructions on how to complete the unsubscription process."
+msgstr ""
+

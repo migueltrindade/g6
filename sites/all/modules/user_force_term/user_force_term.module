@@ -1,0 +1,210 @@
+<?php
+// $Id: user_force_term.module,v 1.7.2.4 2009/11/23 15:16:04 wulff Exp $
+
+/**
+ * @file
+ * Force all content created by a user to be associated with a taxonomy term.
+ */
+
+/* --- HOOKS ---------------------------------------------------------------- */
+
+/**
+ * Implementation of hook_help().
+ */
+function user_force_term_help($path, $arg) {
+  switch ($path) {
+    case 'admin/modules#description':
+      return t('Force content submitted by users to be associated with a taxonomy term.');
+    case 'admin/user/user/user_force_term':
+      return t('By selecting a vocabulary from the list below, you can force all content created by specific users to be associated with a term from that vocabulary. When you have selected a vocabulary, you can edit a user to select the forced term you wish to associate with all his or her content.');
+  }
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function user_force_term_menu() {
+  $items = array();
+
+  $items['admin/user/user/user_force_term'] = array(
+    'title'            => 'Force taxonomy term',
+    'description'      => 'Force all content submitted by users to be attached to a term from this vocabulary.',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('user_force_term_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'type'             => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_perm().
+ */
+function user_force_term_perm() {
+  return array('administer forced term associations');
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function user_force_term_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+  switch ($op) {
+    case 'presave':
+      $vid = variable_get('user_force_term_vocabulary', 0);
+      if (!$vid) {
+        return;
+      }
+
+      if (!user_access('administer forced term associations')) {
+        $account = user_load($node->uid);
+        if ($account->tid) {
+          $node->taxonomy[$vid] = $account->tid;
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_user().
+ */
+function user_force_term_user($op, &$edit, &$account, $category = NULL) {
+  switch ($op) {
+    case 'load':
+      $result = db_query('SELECT tid FROM {user_force_term} WHERE uid = %d', array(':uid' => $account->uid));
+      $account->tid = db_result($result);
+      break;
+    case 'insert':
+    case 'update':
+      if (isset($edit['tid'])) {
+        $tid = $edit['tid'];
+        db_query('DELETE FROM {user_force_term} WHERE uid = %d', array(':uid' => $account->uid));
+        if ($tid > 0) {
+          db_query('INSERT INTO {user_force_term} (uid, tid) VALUES (%d, %d)', array(':uid' => $account->uid, ':tid' => $tid));
+        }
+      }
+      break;
+    case 'delete':
+      db_query('DELETE FROM {user_force_term} WHERE uid = %d', array(':uid' => $account->uid));
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_taxonomy().
+ */
+function user_force_term_taxonomy($op, $type, $array = NULL) {
+  if ('delete' == $op && 'term' == $type) {
+    db_query('DELETE FROM {user_force_term} WHERE tid = %d', array(':tid' => $array['tid']));
+  }
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function user_force_term_form_alter(&$form, $form_state, $form_id) {
+  global $user;
+
+  if (isset($form['type']) && isset($form['#node']) && $form['type']['#value'] .'_node_form' == $form_id) {
+    // get the vocabulary id and bail out if it hasn't been set
+    $vid = variable_get('user_force_term_vocabulary', 0);
+    if (!$vid) {
+      return;
+    }
+
+    $vocabulary = taxonomy_vocabulary_load($vid);
+
+    if (isset($form['taxonomy'][$vid]) && in_array($form['#node']->type, $vocabulary->nodes)) {
+      if (user_access('administer forced term associations')) {
+        $form['taxonomy'][$vid]['#description'] .= ' '. t('Depending on your settings for the !url, this dropdown may not be visible to all users.', array('!url' => l(t('user force term module'), 'admin/user/user/user_force_term')));
+      }
+      else {
+        $form['taxonomy'][$vid]['#access'] = FALSE;
+      }
+    }
+  }
+}
+
+/**
+ * Implementation of hook_form_FORM_ID_alter().
+ */
+function user_force_term_form_user_profile_form_alter(&$form, $form_state) {
+  _user_force_term_form_alter($form, $form_state);
+}
+
+/**
+ * Implementation of hook_form_FORM_ID_alter().
+ */
+function user_force_term_form_user_register_alter(&$form, $form_state) {
+  _user_force_term_form_alter($form, $form_state);
+}
+
+/* --- FORMS ---------------------------------------------------------------- */
+
+/**
+ * Admin settings form
+ */
+function user_force_term_admin_settings() {
+  // get a list of vocabularies and remove any free-tagging vocabularies
+  $vocabularies = taxonomy_get_vocabularies();
+  foreach ($vocabularies as $vid => $vocabulary) {
+    if ($vocabulary->tags) {
+      unset($vocabularies[$vid]);
+    }
+  }
+
+  if (empty($vocabularies)) {
+    drupal_set_message(t('You need to create at least one non-tagging taxonomy to use this feature.'), 'error');
+  }
+  else {
+    $options = array(0 => t('<none>'));
+    foreach ($vocabularies as $vocabulary) {
+      $options[$vocabulary->vid] = $vocabulary->name;
+    }
+
+    $form['user_force_term_vocabulary'] = array(
+      '#type' => 'select',
+      '#title' => t('Force taxonomy term'),
+      '#default_value' => variable_get('user_force_term_vocabulary', 0),
+      '#options' => $options,
+      '#description' => t('Force all content submitted by users to be attached to a term from this vocabulary.'),
+    );
+
+    return system_settings_form($form);
+  }
+}
+
+/* --- UTILITY -------------------------------------------------------------- */
+
+/**
+ * Add term selection widget to user register/edit forms.
+ */
+function _user_force_term_form_alter(&$form, $form_state) {
+  $access = user_access('administer forced term associations');
+  $vid = variable_get('user_force_term_vocabulary', 0);
+
+  // add form element to the user edit form
+  if ($access && $vid) {
+    $tree = taxonomy_get_tree($vid);
+
+    $options = array(0 => t('<none>'));
+    foreach ($tree as $term) {
+      $options[$term->tid] = $term->name;
+    }
+
+    $default_value = 0;
+    if (!empty($form['#uid'])) {
+      $account = $form['_account']['#value'];
+      $default_value = $account->tid;
+    }
+    $form['account']['tid'] = array(
+      '#type' => 'select',
+      '#title' => t('Forced term association'),
+      '#default_value' => $default_value,
+      '#options' => $options,
+      '#description' => t('Force all content submitted by this user to be associated with the selected term.'),
+      '#weight' => 10,
+    );
+  }
+}

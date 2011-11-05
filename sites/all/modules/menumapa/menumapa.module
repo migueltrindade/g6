@@ -1,0 +1,125 @@
+<?php
+//$Id$
+
+/**
+ * Implmentation of hook_theme().
+ */
+function menumapa_theme() {
+  return array(
+    'menumapa_build' => array(
+      'arguments' => array('menu' => NULL)
+    )
+  );
+}
+
+
+/**
+ * Implmentation of hook_menu().
+ */
+function menumapa_menu() {
+	
+	$items = array();
+	
+	$items['mapa-do-site'] = array(
+		'title' => 'Mapa do site Grade6',
+		'description' => 'Mapa do site Grade6', 
+		'page callback' => '_menumapa_get_menu',
+		'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM
+	);
+	
+	return $items;
+} //function statusonline_menu()
+
+function _menumapa_get_menu() {
+	/*$menu = menu_tree_all_data('primary-links', $item  = NULL);	
+	dsm($menu);
+	
+	$content = '';
+	foreach($menu as $m) {
+		$content .= '<div>' . $m . '</div>';
+	} 
+	return $content;*/
+	
+	$menu_name = 'primary-links';
+	$menu = NULL;
+	
+	$menu = isset($menu) ? $menu : menu_tree_all_data($menu_name);
+
+  $output['content'] = '';
+  $output['subject'] = $title;
+
+  if ($menu) {
+    $output['content'] .= theme('menumapa_build', $menu);
+  }
+	
+  return '<div id="mapa-de-site"><ul>' . $output['content'] . '<ul></div>';
+}
+
+
+function theme_menumapa_build($menu) {
+ 
+ $output = '';
+
+  foreach ($menu as $menu_item) {
+		
+		//dsm($menu_item);
+		
+    $mlid = $menu_item['link']['mlid'];
+    // Check to see if it is a visible menu item.
+    if ($menu_item['link']['hidden'] == 0) {
+      // Build class name based on menu path
+      // e.g. to give each menu item individual style.
+      // Strip funny symbols.
+      $clean_path = str_replace(array('http://', '<', '>', '&', '=', '?', ':'), '', $menu_item['link']['href']);
+      // Convert slashes to dashes.
+      $clean_path = str_replace('/', '-', $clean_path);
+      $path_class = 'menu-path-'. $clean_path;
+      // If it has children build a nice little tree under it.
+      if ((!empty($menu_item['link']['has_children'])) && (!empty($menu_item['below']))) {
+        // Keep passing children into the function 'til we get them all.
+        $children = theme('menumapa_build', $menu_item['below']);
+        // Set the class to parent only of children are displayed.
+        $parent_class = $children ? 'menuparent ' : '';
+				
+				$addtional_css = '';
+				
+				switch($menu_item['link']['link_path']) {
+					case "node/16":
+						$addtional_css = ' profissional';
+						break;
+					case "node/28":
+						$addtional_css = ' esportiva';
+						break;
+					case "node/29":
+						$addtional_css = ' treinamentos';
+						break;
+					case "node/30":
+						$addtional_css = ' eventos';
+						break;
+				}
+				
+				if($menu_item['link']['link_path'] == 'node/31' || $menu_item['link']['link_path'] == 'node/2') {
+					
+					$output .= '<li id="menu-'. $mlid .'" class="'. $parent_class . $path_class . '"><div><a href="#" title="'.check_plain($menu_item['link']['link_title']).'">'.check_plain($menu_item['link']['link_title']).'</a>';
+				
+				} else {
+					$output .= '<li id="menu-'. $mlid .'" class="'. $parent_class . $path_class . $addtional_css . '"><div>'. theme('menu_item_link', $menu_item['link']);
+				}
+				
+        
+        // Build the child UL only if children are displayed for the user.
+        if ($children) {
+          $output .= '<ul>';
+          $output .= $children;
+          $output .= "</ul>\n";
+        }
+        $output .= "</div></li>\n";
+      }
+      else {
+        $output .= '<li id="menu-'. $mlid .'" class="'. $path_class .'"><div>'. theme('menu_item_link', $menu_item['link']) .'</div></li>'."\n";
+      }
+    }
+  }
+  return $output;
+}
